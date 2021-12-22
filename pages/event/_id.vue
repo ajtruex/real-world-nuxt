@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Create an Event</h1>
+    <h1>Event #{{ id }}</h1>
   </div>
 </template>
 
@@ -8,15 +8,20 @@
 export default {
   head() {
     return {
-      title: "Create an Event-",
+      title: "Event #" + this.id,
       meta: [
         {
           hid: "description",
           name: "description",
-          content: "Where you can create an event",
+          content: "What you need to know about event #" + this.id,
         },
       ],
     }
+  },
+  computed: {
+    id() {
+      return this.$route.params.id
+    },
   },
 }
 </script>
